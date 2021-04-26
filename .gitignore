@@ -1,0 +1,23 @@
+# Built application files
+*.apk
+*.ap_
+
+# Log Files
+*.log
+
+# idea
+*/.idea/
+.idea/
+*.iml
+*/*.iml
+
+# web
+node_modules/
+npm-debug.log*
+package-lock.json
+
+# others
+*/.DS_Store
+.DS_Store
+
+#app

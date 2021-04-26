@@ -1,0 +1,46 @@
+html, body, div, ul, li, p, h1, h2, h3, h4, span, i, a, input, select {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #333;
+    appearance: none;
+}
+
+a {
+    color: #66f;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#app {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.h1 {
+    font-size: 16px;
+    line-height: 3em;
+    background-color: #eef;
+    text-indent: 1em;
+}
+
+.demo-list li {
+    font-size: 14px;
+    padding: 12px 18px;
+    border-bottom: 1px dotted #f2f2f2;
+}
+
+.demo-list li a {
+    display: block;
+}
+
+.demo-list li span {
+    font-size: 12px;
+    display: block;
+    padding-top: 5px;
+}
