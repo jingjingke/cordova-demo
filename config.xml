@@ -24,6 +24,21 @@
         <icon src="res/icon/android/xhdpi.png" density="xhdpi" />
         <icon src="res/icon/android/xxhdpi.png" density="xxhdpi" />
         <icon src="res/icon/android/xxxhdpi.png" density="xxxhdpi" />
+        <!--添加引导页-->
+        <splash density="port-hdpi" src="res/screen/android/splash-port-hdpi.png" />
+        <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+        <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />
+        <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />
+        <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxhdpi" src="res/screen/android/splash-port-xhdpi.png" />
+        <splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png" />
+        <!--不拉伸引导页尺寸-->
+        <preference name="SplashMaintainAspectRatio" value="true" />
+        <!--取消引导页旋转器（loading）-->
+        <preference name="ShowSplashScreenSpinner" value="false"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
