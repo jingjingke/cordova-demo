@@ -42,5 +42,13 @@
       "IOSKEY": "b96decb9acfcb96f0de471dbdc0518fe",
       "LOCATION_USAGE_DESCRIPTION": "test"
     }
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
