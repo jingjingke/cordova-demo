@@ -35,6 +35,11 @@ html, body {
     text-align: center;
 }
 
+.tips {
+    font-size: 12px;
+    padding: 20px;
+}
+
 .demo-list li {
     font-size: 16px;
     padding: 12px 18px;

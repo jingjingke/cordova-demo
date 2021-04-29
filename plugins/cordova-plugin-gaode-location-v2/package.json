@@ -1,0 +1,71 @@
+{
+  "_from": "cordova-plugin-gaode-location-v2@2.0.0",
+  "_id": "cordova-plugin-gaode-location-v2@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha512-AEqcOsY3N/4SRw6YoJm2bKRQsS6x/M+HPCXTTnf89+2cihjC+cw6Dhao5bjomt9axgUv+jvnunNqBNYjOjcaLA==",
+  "_location": "/cordova-plugin-gaode-location-v2",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "cordova-plugin-gaode-location-v2@2.0.0",
+    "name": "cordova-plugin-gaode-location-v2",
+    "escapedName": "cordova-plugin-gaode-location-v2",
+    "rawSpec": "2.0.0",
+    "saveSpec": null,
+    "fetchSpec": "2.0.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://npm.eslink.cc/cordova-plugin-gaode-location-v2/-/cordova-plugin-gaode-location-v2-2.0.0.tgz",
+  "_shasum": "7f83051161e5b296abfb2e6298ca1b471900d66f",
+  "_spec": "cordova-plugin-gaode-location-v2@2.0.0",
+  "_where": "/Users/cuiziyan/Downloads/cordova-demo",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jackxu2011/cordova-plugin-gaode-location/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-gaode-location-v2",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "基于cordova封装的高德地图定位插件",
+  "engines": {
+    "cordovaDependencies": {
+      "1.1.0": {
+        "apple-ios": ">=9.0.0",
+        "apple-xcode": ">=9.0.0",
+        "cordova": ">=7.1.0",
+        "cordova-android": ">=7.0.0",
+        "cordova-ios": ">=4.3.0"
+      },
+      "<=1.0.1": {
+        "cordova": ">=6.1.0",
+        "cordova-android": "<7.0.0",
+        "cordova-ios": ">=4.3.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/jackxu2011/cordova-plugin-gaode-location#readme",
+  "keywords": [
+    "cordova",
+    "plugin",
+    "gaode",
+    "amap",
+    "location"
+  ],
+  "license": "MIT",
+  "name": "cordova-plugin-gaode-location-v2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackxu2011/corodva-plugin-gaode-location.git"
+  },
+  "version": "2.0.0"
+}

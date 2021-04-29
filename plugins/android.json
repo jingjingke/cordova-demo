@@ -20,6 +20,12 @@
     "cordova-plugin-geolocation": {
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "com.jingjingke.www"
+    },
+    "cordova-plugin-gaode-location-v2": {
+      "ANDROIDKEY": "e0a2deeaf7e5647a9f6cb8adec90ab21",
+      "IOSKEY": "b96decb9acfcb96f0de471dbdc0518fe",
+      "LOCATION_USAGE_DESCRIPTION": "test",
+      "PACKAGE_NAME": "com.jingjingke.www"
     }
   },
   "dependent_plugins": {}

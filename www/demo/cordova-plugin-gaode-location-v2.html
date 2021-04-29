@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>高德地图定位</title>
+    <style>
+        .info {
+            width: 80%;
+            margin: 20px auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="history.back()">返回</div>
+<div class="center">
+    <div id="locationInfo" class="info"></div>
+    <button id="getLocation">获取定位信息</button>
+    <p class="tips">该示例请使用签名包(release)获取定位</p>
+</div>
+
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            document.getElementById("getLocation").addEventListener("click", app.getCurrentPosition);
+        },
+        getCurrentPosition: function () {
+            var locationInfo = document.getElementById('locationInfo');
+            window.GaodeLocation.getLocation(function (data) {
+                // 成功的回调
+                locationInfo.innerHTML = "定位成功：" + JSON.stringify(data);
+            }, function (error) {
+                // 失败的回调
+                locationInfo.innerHTML = "定位失败：" + JSON.stringify(error);
+            });
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>

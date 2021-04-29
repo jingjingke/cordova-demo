@@ -30,5 +30,17 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-plugin-gaode-location-v2": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-gaode-location-v2@2.0.0"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROIDKEY": "e0a2deeaf7e5647a9f6cb8adec90ab21",
+      "IOSKEY": "b96decb9acfcb96f0de471dbdc0518fe",
+      "LOCATION_USAGE_DESCRIPTION": "test"
+    }
   }
 }

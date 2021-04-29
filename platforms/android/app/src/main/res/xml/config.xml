@@ -31,4 +31,8 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
+    <feature name="GaodeLocation">
+        <param name="android-package" value="com.linkcld.cordova.amap.GaodeLocation" />
+    </feature>
+    <preference name="ANDROIDKEY" value="e0a2deeaf7e5647a9f6cb8adec90ab21" />
 </widget>
