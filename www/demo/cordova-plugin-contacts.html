@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>通讯录</title>
+    <style>
+        .info {
+            width: 80%;
+            margin: 20px auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="history.back()">返回</div>
+<div class="center">
+    <div id="contactInfo" class="info"></div>
+    <button id="getLocation">获取通讯录</button>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            document.getElementById("getLocation").addEventListener("click", app.findContacts);
+        },
+        findContacts: function () {
+            var contactInfo = document.getElementById('contactInfo');
+            var options = new ContactFindOptions();
+            options.filter = "";
+            options.multiple = true;
+            options.desiredFields = [navigator.contacts.fieldType.id, navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.phoneNumbers];
+            options.hasPhoneNumber = true;
+            var fields = [navigator.contacts.fieldType.displayName]; // 从哪些字段过滤-当filter为空时可以任意添一个就可以了
+            navigator.contacts.find(fields, function (contacts) {
+                // 成功回调
+                var html = "";
+                for (var i = 0; i < contacts.length; i++) {
+                    html += contacts[i].displayName + ' 的联系方式：';
+                    var phoneNumbers = contacts[i].phoneNumbers;
+                    for (var j = 0; j < phoneNumbers.length; j++) {
+                        html += phoneNumbers[j].value + (j === phoneNumbers.length - 1 ? '；' : '、')
+                    }
+                    html += '</br>';
+                }
+                contactInfo.innerHTML = html;
+            }, function (contactError) {
+                // 失败回调
+                contactInfo.innerHTML = "失败：" + JSON.stringify(contactError);
+            }, options);
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>
