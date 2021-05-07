@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>获取设备信息</title>
+    <style>
+        .info {
+            width: 80%;
+            margin: 20px auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="history.back()">返回</div>
+<div class="center">
+    <div id="deviceInfo" class="info"></div>
+    <button id="getDeviceInfo">获取设备信息</button>
+    <p class="tips">直接拿到全局device对象获取数据</p>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            // 选择是照像机还是相册
+            document.getElementById("getDeviceInfo").addEventListener("click", app.setDeviceInfo);
+        },
+        setDeviceInfo: function () {
+            var deviceInfo = document.getElementById('deviceInfo');
+            deviceInfo.innerHTML = "设置信息[device]："+JSON.stringify(device);
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "_from": "cordova-baidu-ocr",
+  "_id": "cordova-baidu-ocr@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-rGFXB3RsUFHZXXLJ0HAz5bOt4GtcxShFh4Ocmy0n+CY7dtvNcR073kntyWVdf8f1Tj9Rt87+mO4YPW+k+h85bA==",
+  "_location": "/cordova-baidu-ocr",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-baidu-ocr",
+    "name": "cordova-baidu-ocr",
+    "escapedName": "cordova-baidu-ocr",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://npm.eslink.cc/cordova-baidu-ocr/-/cordova-baidu-ocr-1.1.1.tgz",
+  "_shasum": "6c89875aeeb6aa87a3ad7ebd7e61e2e2e5ccd364",
+  "_spec": "cordova-baidu-ocr",
+  "_where": "/Users/cuiziyan/Downloads/cordova-demo",
+  "author": {
+    "name": "hankersyan"
+  },
+  "bugs": {
+    "url": "https://github.com/hankersyan/cordova-baidu-ocr/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-baidu-ocr",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin of Baidu Ocr",
+  "engines": {
+    "cordovaDependencies": {
+      "7.0.0": {
+        "cordova-android": ">=6.3.0"
+      },
+      "7.1.0": {
+        "cordova": ">=7.1.0",
+        "cordova-android": ">=6.3.0"
+      }
+    }
+  },
+  "homepage": "https://github.com/hankersyan/cordova-baidu-ocr#readme",
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android",
+    "cordova:plugin"
+  ],
+  "license": "MIT",
+  "name": "cordova-baidu-ocr",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hankersyan/cordova-baidu-ocr.git"
+  },
+  "version": "1.1.1"
+}

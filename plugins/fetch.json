@@ -58,5 +58,13 @@
     },
     "is_top_level": true,
     "variables": {}
+  },
+  "cordova-baidu-ocr": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-baidu-ocr"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

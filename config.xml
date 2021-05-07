@@ -39,6 +39,8 @@
         <preference name="SplashMaintainAspectRatio" value="true" />
         <!--取消引导页旋转器（loading）-->
         <preference name="ShowSplashScreenSpinner" value="false"/>
+        <!--添加百度云OCR识别授权文件索引-->
+        <resource-file src="aip.license" target="app/src/main/assets/aip.license" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />

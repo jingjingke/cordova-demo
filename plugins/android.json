@@ -32,6 +32,9 @@
     },
     "cordova-plugin-contacts": {
       "PACKAGE_NAME": "com.jingjingke.www"
+    },
+    "cordova-baidu-ocr": {
+      "PACKAGE_NAME": "com.jingjingke.www"
     }
   },
   "dependent_plugins": {}

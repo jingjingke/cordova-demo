@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>拍照选图案例</title>
+    <style>
+        .pre {
+            width: 80%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="history.back()">返回</div>
+<div class="center">
+    <pre id="locationInfo" class="pre"></pre>
+    <button id="getLocation">获取定位信息</button>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            var photoWrap = document.getElementById('photoWrap');
+
+            // 选择是照像机还是相册
+            document.getElementById("getLocation").addEventListener("click", app.getCurrentPosition);
+        },
+        getCurrentPosition: function () {
+            var locationInfo = document.getElementById('locationInfo');
+            navigator.geolocation.getCurrentPosition(function (position) {
+                // 成功的回调
+                locationInfo.innerHTML =
+                    'Latitude: '          + position.coords.latitude          + '\n' +
+                    'Longitude: '         + position.coords.longitude         + '\n' +
+                    'Altitude: '          + position.coords.altitude          + '\n' +
+                    'Accuracy: '          + position.coords.accuracy          + '\n' +
+                    'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+                    'Heading: '           + position.coords.heading           + '\n' +
+                    'Speed: '             + position.coords.speed             + '\n' +
+                    'Timestamp: '         + position.timestamp                + '\n';
+            }, function () {
+                // 失败的回调
+                locationInfo.innerHTML =
+                    "定位获取失败" + '\n'
+                'code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n';
+            }, {
+                enableHighAccuracy: true,   // 高精度
+                timeout: 3000               // 超时时间
+            });
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>

@@ -99,6 +99,7 @@ ext {
 
 // PLUGIN GRADLE EXTENSIONS START
 apply from: "../cordova-plugin-gaode-location-v2/www-Gaode.gradle"
+apply from: "../cordova-baidu-ocr/www-baiduocr.gradle"
 // PLUGIN GRADLE EXTENSIONS END
 
 def hasBuildExtras1 = file('build-extras.gradle').exists()
@@ -295,6 +296,7 @@ dependencies {
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
     implementation "com.android.support:support-v4:27.+"
+    implementation "com.android.support:appcompat-v7:25.4.0"
     // SUB-PROJECT DEPENDENCIES END
 }
 

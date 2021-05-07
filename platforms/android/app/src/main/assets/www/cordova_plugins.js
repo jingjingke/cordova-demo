@@ -146,6 +146,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "merges": [
         ""
       ]
+    },
+    {
+      "id": "cordova-baidu-ocr.BaiduOcr",
+      "file": "plugins/cordova-baidu-ocr/www/BaiduOcr.js",
+      "pluginId": "cordova-baidu-ocr",
+      "clobbers": [
+        "BaiduOcr"
+      ]
     }
   ];
   module.exports.metadata = {
@@ -155,6 +163,7 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     "cordova-plugin-geolocation": "4.1.0",
     "cordova-plugin-gaode-location-v2": "2.0.0",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-contacts": "3.0.1"
+    "cordova-plugin-contacts": "3.0.1",
+    "cordova-baidu-ocr": "1.1.1"
   };
 });

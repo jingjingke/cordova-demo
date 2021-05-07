@@ -39,6 +39,10 @@
             {
               "xml": "<feature name=\"Contacts\"><param name=\"android-package\" value=\"org.apache.cordova.contacts.ContactManager\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"BaiduOcr\"><param name=\"android-package\" value=\"com.huatuo.cordova.BaiduOcr\" /></feature>",
+              "count": 1
             }
           ]
         }
@@ -110,6 +114,24 @@
               "xml": "<meta-data android:name=\"com.amap.api.v2.apikey\" android:value=\"e0a2deeaf7e5647a9f6cb8adec90ab21\" />",
               "count": 1
             }
+          ],
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.CAMERA\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 1
+            }
           ]
         }
       }
@@ -140,6 +162,9 @@
       "PACKAGE_NAME": "com.jingjingke.www"
     },
     "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.jingjingke.www"
+    },
+    "cordova-baidu-ocr": {
       "PACKAGE_NAME": "com.jingjingke.www"
     }
   },
@@ -291,6 +316,14 @@
       "merges": [
         ""
       ]
+    },
+    {
+      "id": "cordova-baidu-ocr.BaiduOcr",
+      "file": "plugins/cordova-baidu-ocr/www/BaiduOcr.js",
+      "pluginId": "cordova-baidu-ocr",
+      "clobbers": [
+        "BaiduOcr"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -300,6 +333,7 @@
     "cordova-plugin-geolocation": "4.1.0",
     "cordova-plugin-gaode-location-v2": "2.0.0",
     "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-contacts": "3.0.1"
+    "cordova-plugin-contacts": "3.0.1",
+    "cordova-baidu-ocr": "1.1.1"
   }
 }

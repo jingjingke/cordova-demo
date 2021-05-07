@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>拍照选图案例</title>
+    <style>
+        .photo-image {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid #e8e8e8;
+        }
+
+        .photo-wrap {
+            position: fixed;
+            z-index: 9;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+            display: none;
+        }
+
+        .photo-list {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .photo-list li {
+            background-color: #fff;
+            border-bottom: 1px solid #e8e8e8;
+            line-height: 3em;
+            text-indent: 1em;
+        }
+
+        .photo-list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="history.back()">返回</div>
+<div class="center">
+    <img class="photo-image" id="myImage" width="200" height="300" alt="预览照片"/>
+    <button id="cameraTakePicture">选择照片</button>
+</div>
+
+<div class="photo-wrap" id="photoWrap">
+    <ul class="photo-list">
+        <li id="selectCamera">照像机</li>
+        <li id="selectPhoto">相册</li>
+    </ul>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            var photoWrap = document.getElementById('photoWrap');
+
+            // 选择是照像机还是相册
+            document.getElementById("cameraTakePicture").addEventListener("click", function () {
+                photoWrap.style.display = 'block';
+            });
+
+            // 通过照像机
+            document.getElementById("selectCamera").addEventListener("click", function () {
+                photoWrap.style.display = 'none';
+                navigator.camera.getPicture(success, fail, {
+                    quality: 50,
+                    destinationType: Camera.DestinationType.DATA_URL
+                });
+
+            });
+
+            // 通过相册
+            document.getElementById("selectPhoto").addEventListener("click", function () {
+                photoWrap.style.display = 'none';
+                navigator.camera.getPicture(success, fail, {
+                    quality: 50,
+                    destinationType: Camera.DestinationType.DATA_URL,
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+                });
+
+            });
+
+            // 成功的回调
+            function success(imageData) {
+                var image = document.getElementById('myImage');
+                image.src = "data:image/jpeg;base64," + imageData;
+            }
+
+            // 失败的回调
+            function fail(message) {
+                alert('图片上传失败（ ' + message + '）');
+            }
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>

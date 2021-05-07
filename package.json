@@ -14,6 +14,7 @@
   "license": "Apache-2.0",
   "dependencies": {
     "cordova-android": "^8.1.0",
+    "cordova-baidu-ocr": "^1.1.1",
     "cordova-plugin-camera": "^4.1.0",
     "cordova-plugin-contacts": "^3.0.1",
     "cordova-plugin-device": "^2.0.3",
@@ -39,7 +40,8 @@
         "LOCATION_USAGE_DESCRIPTION": "test"
       },
       "cordova-plugin-device": {},
-      "cordova-plugin-contacts": {}
+      "cordova-plugin-contacts": {},
+      "cordova-baidu-ocr": {}
     },
     "platforms": [
       "android"

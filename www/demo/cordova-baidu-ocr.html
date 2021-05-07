@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <title>百度云OCR</title>
+    <style>
+        .ocrWrap {
+            display: none;
+        }
+
+        .info {
+            width: 80%;
+            margin: 20px auto;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+<div class="back" onclick="app.onBack()">返回</div>
+<div class="center ocrWrap" id="ocrWrap">
+    <div id="contactInfo" class="info"></div>
+    <button id="startOcr">点击拍照识别</button>
+</div>
+<script type="text/javascript" src="../cordova.js"></script>
+<script>
+    var app = {
+        initialize: function () {
+            document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+            document.addEventListener('backbutton', this.onBack.bind(this), false);
+
+            // 拍照获取相片
+            var contactInfo = document.getElementById('contactInfo');
+            document.getElementById("startOcr").addEventListener("click", function () {
+                // 开始识别
+                BaiduOcr.scanHandWriting({}, function (result) {
+                    var data = JSON.parse(result);
+                    var list = data.words_result;
+
+                    var html = '';
+                    if (list.length > 0) {
+                        html += "成功：<br>";
+                        for (var i = 0; i < list.length; i++) {
+                            html += list[i].words + (i < list.length - 1 ? '<br>' : '');
+                        }
+                    } else {
+                        html = "未识别到数据"
+                    }
+
+                    contactInfo.innerHTML = html;
+                }, function (error) {
+                    contactInfo.innerHTML = '失败：' + error;
+                });
+            });
+        },
+        onDeviceReady: function () {
+            // 初始化OCR后再显示按钮
+            BaiduOcr.init(function () {
+                document.getElementById("ocrWrap").style.display = 'block';
+            }, function (error) {
+                alert('OCR初始失败（ ' + JSON.stringify(error) + '）');
+            });
+        },
+        onBack: function () {
+            // 销毁OCR本地控制模型
+            BaiduOcr.destroy(function () {
+                history.back();
+            },function () {
+                alert('OCR销毁失败（ ' + JSON.stringify(error) + '）');
+            });
+        }
+    };
+    app.initialize();
+</script>
+</body>
+</html>
